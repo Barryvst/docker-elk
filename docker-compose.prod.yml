@@ -85,7 +85,7 @@ services:
       - traefik.http.routers.kibana.tls.certresolver=letsencrypt
       - traefik.http.routers.kibana.tls=true
       - traefik.http.routers.kibana.entrypoints=https
-      - "traefik.http.routers.prometheus.middlewares=auth-barry"
+      - "traefik.http.routers.kibana.middlewares=auth-barry"
 
   apm-server:
     build:
@@ -114,7 +114,7 @@ services:
       - traefik.http.routers.apm.tls.certresolver=letsencrypt
       - traefik.http.routers.apm.tls=true
       - traefik.http.routers.apm.entrypoints=https
-      - "traefik.http.routers.prometheus.middlewares=auth-barry"
+      - "traefik.http.routers.apm.middlewares=auth-barry"
 
 networks:
   elk:
